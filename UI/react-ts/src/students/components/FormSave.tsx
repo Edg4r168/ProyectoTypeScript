@@ -28,6 +28,8 @@ export const FormSave = ({ show, onClose }: ModalProps) => {
     };
 
     saveStudent(student);
+    onClose && onClose();
+    form.reset();
   }
 
   return (

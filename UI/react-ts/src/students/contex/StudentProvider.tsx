@@ -1,11 +1,11 @@
-import { ReactNode, useContext, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import { deleteService } from "../services/delete";
 import { updateService } from "../services/update";
 import { saveService } from "../services/save";
 import { getByIdService } from "../services/getById";
 import { getAllService } from "../services/getAll";
 import { NewStudent, Student } from "../../types/types";
-import { StudentContext } from "./studentContex";
+import { StudentContext } from "./StudentContex";
 
 interface Props {
   children: ReactNode;
@@ -65,10 +65,6 @@ export function StudentProvider({ children }: Props) {
   const cleanStudent = () => {
     setStudent(null);
   };
-
-  useEffect(() => {
-    getStudents();
-  }, []);
 
   return (
     <StudentContext.Provider
